@@ -211,7 +211,7 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
 .hero__eyebrow {
   font-family: var(--font-gothic);
   font-weight: 400;
-  font-size: clamp(13px, 1.5vw, 16px);
+  font-size: clamp(14px, 1.7vw, 17px);
   letter-spacing: 0.38em;
   color: rgba(255,255,255,0.92);
   text-shadow: 0 2px 20px rgba(0,0,0,0.35);
@@ -234,14 +234,14 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   display: block;
   font-family: var(--font-mincho);
   font-weight: 400;
-  font-size: clamp(18px, 2.6vw, 28px);
+  font-size: clamp(20px, 2.9vw, 31px);
   letter-spacing: 0.14em;
   margin-bottom: clamp(10px, 1.5vw, 16px);
   color: rgba(255,255,255,0.95);
 }
 .hero__title-main {
   display: block;
-  font-size: clamp(40px, 7vw, 82px);
+  font-size: clamp(46px, 7.8vw, 90px);
   letter-spacing: 0.18em;
   padding-left: 0.18em;
 }
@@ -293,11 +293,17 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   animation: riseUp 1.3s var(--ease) 1.0s forwards;
 }
 .hero__info .num {
-  font-family: var(--font-en);
+  font-family: var(--font-gothic);
   font-weight: 500;
-  font-size: 1.15em;
-  letter-spacing: 0.02em;
-  margin: 0 0.08em;
+  font-size: 1.06em;
+  letter-spacing: 0.04em;
+  margin: 0 0.04em;
+}
+.hero__info .note {
+  font-weight: 300;
+  font-size: 0.86em;
+  letter-spacing: 0.08em;
+  opacity: 0.92;
 }
 .hero__scroll {
   display: flex;
@@ -332,9 +338,9 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   .hero { min-height: 90vh; min-height: 90svh; }
   .hero__content { min-height: 90vh; min-height: 90svh; padding: 32px var(--gutter) 28px; }
   .hero__main { gap: 20px; padding: 16px 0; }
-  .hero__eyebrow { font-size: 11px; letter-spacing: 0.28em; }
-  .hero__title-sub { font-size: clamp(15px, 4vw, 20px); letter-spacing: 0.1em; }
-  .hero__title-main { font-size: clamp(32px, 8.5vw, 54px); letter-spacing: 0.1em; padding-left: 0.1em; }
+  .hero__eyebrow { font-size: 12px; letter-spacing: 0.26em; }
+  .hero__title-sub { font-size: clamp(17px, 4.6vw, 23px); letter-spacing: 0.1em; }
+  .hero__title-main { font-size: clamp(37px, 9.6vw, 62px); letter-spacing: 0.1em; padding-left: 0.1em; }
   .hero__badge { padding: 11px 22px; font-size: 11px; letter-spacing: 0.12em; }
   .hero__badge .dot { margin: 0 10px; }
   .hero__info { font-size: 12px; letter-spacing: 0.08em; }
@@ -667,7 +673,7 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   object-fit: cover;
   display: block;
 }
-/* スライド2枚目：右エリアがもう少し映るよう右寄りにトリミング（数値で微調整可：50%=中央 / 大きいほど右） */
+/* スライド2枚目：右エリアがもう少し映るよう右寄りにトリミング（50%=中央 / 大きいほど右） */
 .about-slider__slide:nth-child(2) img {
   object-position: 72% center;
 }
@@ -1736,7 +1742,7 @@ textarea.form-control {
     <div class="hero__main">
       <p class="hero__eyebrow">
         <!-- [[PROPERTY]] エリア名（湘南エリア / 横浜エリア 等） -->
-        湘南エリア 建売ブランド
+        横浜エリア 建売ブランド
       </p>
       <h1 class="hero__title">
         <!-- [[PROPERTY]] 物件名 -->
@@ -1749,11 +1755,11 @@ textarea.form-control {
     <div class="hero__bottom">
       <div class="hero__badge">
         <!-- [[PROPERTY]] 限定枠数 -->
-        参加無料<span class="dot"></span>1日限定3枠<span class="dot"></span>完全予約制
+        参加無料<span class="dot"></span>1日限定5枠<span class="dot"></span>完全予約制
       </div>
       <div class="hero__info">
         <!-- [[PROPERTY]] 開催日時 -->
-        <span class="num">2026.04.XX</span>（土）・<span class="num">04.XX</span>（日） <span class="num">10:00</span> 〜 <span class="num">18:00</span>
+        全日程 <span class="num">10:00</span>〜<span class="num">19:00</span>　<span class="note">※定休日：火・水</span>
       </div>
       <div class="hero__scroll">
         <span>Scroll</span>
@@ -1776,7 +1782,7 @@ textarea.form-control {
     <div class="merit-grid">
       <div class="merit-card reveal">
         <div class="merit-card__num">01</div>
-        <h3 class="merit-card__title">暮らしを、<br>具体的にイメージできる</h3>
+        <h3 class="merit-card__title">暮らしを具体的にイメージできる</h3>
         <p class="merit-card__body">現地でしか体感できない周辺環境や立地、窓から見える景色まで。五感で確かめることで、新生活をより具体的にイメージできます。</p>
       </div>
       <div class="merit-card reveal reveal-delay-1">
@@ -1786,7 +1792,7 @@ textarea.form-control {
       </div>
       <div class="merit-card reveal reveal-delay-2">
         <div class="merit-card__num">03</div>
-        <h3 class="merit-card__title">最新・類似の<br>物件資料が貰える</h3>
+        <h3 class="merit-card__title">最新・類似の物件資料が貰える</h3>
         <p class="merit-card__body">見学物件だけでなく、ご希望に合わせた最新物件情報もその場でご提案。比較を重ねて経験値を積むことで、自分たちなりの判断軸が育ちます。</p>
       </div>
     </div>
@@ -1841,11 +1847,11 @@ textarea.form-control {
           </div>
           <div class="about-slider__slide">
             <img src="images/story-05-two-doors.jpg" alt="2ドア1ルームの設計" loading="lazy">
-            <div class="about-slider__caption">将来を見据えて<br>「2ドア1ルーム」を採用<span class="kuten">。</span></div>
+            <div class="about-slider__caption">将来を見据えて<br>「２ドア１ルーム」を採用<span class="kuten">。</span></div>
           </div>
           <div class="about-slider__slide">
             <img src="images/story-06-storage.jpg" alt="脱衣所からアクセスできる収納" loading="lazy">
-            <div class="about-slider__caption">もう<span class="kuten">、</span>2階まで<br>着替えを取りにいかずにOK<span class="kuten">。</span></div>
+            <div class="about-slider__caption">もう<span class="kuten">、</span>２階まで<br>着替えを取りにいかずにOK<span class="kuten">。</span></div>
           </div>
         </div>
       </div>
@@ -2051,17 +2057,17 @@ textarea.form-control {
       <dl class="outline-dl">
         <dt>Location</dt>
         <!-- [[PROPERTY]] 場所（区・エリアまで。住所詳細はNG） -->
-        <dd>藤沢市 鵠沼桜が岡エリア<span class="small">※詳細住所はご予約後にお送りいたします</span></dd>
+        <dd>藤沢市 鵠沼<span class="small">※詳細住所はご予約後にお送りいたします</span></dd>
 
         <dt>Date</dt>
         <!-- [[PROPERTY]] 開催日 -->
-        <dd>2026年4月XX日（土）〜 4月XX日（日）</dd>
+        <dd>全日程開催<span class="small">※定休日：火・水</span></dd>
 
         <dt>Time</dt>
-        <dd>10:00 〜 18:00</dd>
+        <dd>10:00 〜 19:00</dd>
 
         <dt>Capacity</dt>
-        <dd>各日3組限定・完全予約制</dd>
+        <dd>各日5組限定・完全予約制</dd>
 
         <dt>Fee</dt>
         <dd>参加無料</dd>
@@ -2083,7 +2089,7 @@ textarea.form-control {
       <h2 class="sec-head__jp">見学会のご予約</h2>
     </header>
 
-    <p class="form-intro reveal reveal-delay-1">下記フォームよりお気軽にお申し込みください。<br>担当者より24時間以内にご連絡いたします。</p>
+    <p class="form-intro reveal reveal-delay-1">下記フォームよりお気軽にお申し込みください。<br>担当者より24時間以内にご連絡いたします。<br>※火・水は定休日です。</p>
 
     <div class="form-wrap reveal reveal-delay-2">
       <!-- ▼▼▼ WordPress実装時にCF7ショートコードに置き換え ▼▼▼ -->
@@ -2106,12 +2112,7 @@ textarea.form-control {
         <div class="form-row">
           <span class="form-row__label">第1希望日時<span class="form-row__required">必須</span></span>
           <div class="form-split">
-            <select name="date1" class="form-control" required>
-              <option value="">日付を選択</option>
-              <!-- [[PROPERTY]] 開催日選択肢 -->
-              <option value="4/XX(土)">4月XX日（土）</option>
-              <option value="4/XX(日)">4月XX日（日）</option>
-            </select>
+            <input type="date" name="date1" class="form-control" min="2026-06-02" required>
             <select name="time1" class="form-control" required>
               <option value="">時間を選択</option>
               <option value="10:00">10:00</option>
@@ -2121,6 +2122,7 @@ textarea.form-control {
               <option value="15:00">15:00</option>
               <option value="16:00">16:00</option>
               <option value="17:00">17:00</option>
+              <option value="18:00">18:00</option>
             </select>
           </div>
         </div>
@@ -2128,12 +2130,7 @@ textarea.form-control {
         <div class="form-row">
           <span class="form-row__label">第2希望日時</span>
           <div class="form-split">
-            <select name="date2" class="form-control">
-              <option value="">日付を選択</option>
-              <!-- [[PROPERTY]] 開催日選択肢 -->
-              <option value="4/XX(土)">4月XX日（土）</option>
-              <option value="4/XX(日)">4月XX日（日）</option>
-            </select>
+            <input type="date" name="date2" class="form-control" min="2026-06-02">
             <select name="time2" class="form-control">
               <option value="">時間を選択</option>
               <option value="10:00">10:00</option>
@@ -2143,6 +2140,7 @@ textarea.form-control {
               <option value="15:00">15:00</option>
               <option value="16:00">16:00</option>
               <option value="17:00">17:00</option>
+              <option value="18:00">18:00</option>
             </select>
           </div>
         </div>
@@ -2150,12 +2148,7 @@ textarea.form-control {
         <div class="form-row">
           <span class="form-row__label">第3希望日時</span>
           <div class="form-split">
-            <select name="date3" class="form-control">
-              <option value="">日付を選択</option>
-              <!-- [[PROPERTY]] 開催日選択肢 -->
-              <option value="4/XX(土)">4月XX日（土）</option>
-              <option value="4/XX(日)">4月XX日（日）</option>
-            </select>
+            <input type="date" name="date3" class="form-control" min="2026-06-02">
             <select name="time3" class="form-control">
               <option value="">時間を選択</option>
               <option value="10:00">10:00</option>
@@ -2165,6 +2158,7 @@ textarea.form-control {
               <option value="15:00">15:00</option>
               <option value="16:00">16:00</option>
               <option value="17:00">17:00</option>
+              <option value="18:00">18:00</option>
             </select>
           </div>
         </div>
@@ -2215,7 +2209,7 @@ textarea.form-control {
       <h2 class="sec-head__jp">リブレグループについて</h2>
     </header>
 
-    <p class="libre-lead reveal">私たちは家を売るのではなく、暮らしに合った選択を一緒に考える会社です。家は、住み始めてからが本番。だから私たちは、物件そのものではなく、その先の暮らしを基準に家探しをサポートしています。</p>
+    <p class="libre-lead reveal">私たちは家を売るのではなく<br>暮らしに合った選択を一緒に考える会社です。<br><br>家は、住み始めてからが本番。<br>だから私たちは、物件そのものではなく、その先の暮らしを基準に家探しをサポートしています。</p>
 
     <div class="libre-features">
       <article class="libre-feature reveal">
