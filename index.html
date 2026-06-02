@@ -628,13 +628,14 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
 }
 .about-slider__label {
   font-family: var(--font-en);
-  font-style: italic;
-  font-size: 12px;
-  letter-spacing: 0.3em;
-  color: var(--color-accent);
+  font-style: normal;
+  font-weight: 500;
+  font-size: clamp(30px, 6vw, 44px);
+  letter-spacing: 0.12em;
+  color: var(--color-ink);
   text-transform: uppercase;
   display: inline-block;
-  margin-bottom: 8px;
+  margin-bottom: 0;
 }
 .about-slider__title {
   font-family: var(--font-mincho);
@@ -1044,6 +1045,16 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   line-height: 1.7;
 }
 .outline-dl > *:nth-last-child(-n+2) { border-bottom: none; padding-bottom: 0; }
+/* 日本語ラベル版（物件概要用） */
+.outline-dl--ja dt {
+  font-family: var(--font-gothic);
+  font-style: normal;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  color: var(--color-sub);
+  text-transform: none;
+  padding-top: 7px;
+}
 .outline-dl dd .small {
   display: block;
   font-family: var(--font-gothic);
@@ -1132,6 +1143,15 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
 .form-control:focus {
   border-color: var(--color-accent);
 }
+/* 日付入力：iOSでも「年/月/日」とカレンダーアイコンが表示されるようネイティブ表示を維持（PC表記と同じ見え方に） */
+input[type="date"].form-control {
+  -webkit-appearance: auto;
+  appearance: auto;
+  min-height: 46px;
+  line-height: 1.2;
+}
+input[type="date"].form-control::-webkit-date-and-time-value { text-align: left; }
+input[type="date"].form-control::-webkit-calendar-picker-indicator { opacity: 0.55; }
 textarea.form-control {
   min-height: 110px;
   resize: vertical;
@@ -1759,7 +1779,7 @@ textarea.form-control {
       </div>
       <div class="hero__info">
         <!-- [[PROPERTY]] 開催日時 -->
-        全日程 <span class="num">10:00</span>〜<span class="num">19:00</span>　<span class="note">※定休日：火・水</span>
+        <span class="num">2026.6.20</span>（土）〜<span class="num">7.19</span>（日）<br><span class="num">10:00</span>〜<span class="num">19:00</span>　<span class="note">※火・水定休</span>
       </div>
       <div class="hero__scroll">
         <span>Scroll</span>
@@ -1823,8 +1843,7 @@ textarea.form-control {
     ============================================================ -->
     <div class="about-slider reveal reveal-delay-3" id="aboutSlider">
       <div class="about-slider__heading">
-        <span class="about-slider__label">Catarel Stories</span>
-        <h3 class="about-slider__title">こだわりが見える「語れるポイント」</h3>
+        <span class="about-slider__label">CATAREL POINT</span>
       </div>
 
       <div class="about-slider__viewport">
@@ -1954,6 +1973,40 @@ textarea.form-control {
 </section>
 
 <!-- ============================================================
+  SECTION: PROPERTY OVERVIEW (物件概要)
+============================================================ -->
+<section class="sec-outline">
+  <div class="container">
+    <header class="sec-head reveal">
+      <div class="sec-head__en">Property Overview</div>
+      <h2 class="sec-head__jp">物件概要</h2>
+    </header>
+
+    <div class="outline-box reveal">
+      <dl class="outline-dl outline-dl--ja">
+        <dt>物件名</dt>
+        <dd>カタレルハウス本鵠沼</dd>
+
+        <dt>間取り</dt>
+        <dd>3LDK＋ロフト</dd>
+
+        <dt>土地面積</dt>
+        <dd>109.02㎡</dd>
+
+        <dt>建物面積</dt>
+        <dd>99.82㎡</dd>
+
+        <dt>販売価格</dt>
+        <dd>7,780万円</dd>
+
+        <dt>竣工</dt>
+        <dd>2026年3月</dd>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
   MID CTA
 ============================================================ -->
 <section class="sec-final sec-final--mid">
@@ -2061,7 +2114,7 @@ textarea.form-control {
 
         <dt>Date</dt>
         <!-- [[PROPERTY]] 開催日 -->
-        <dd>全日程開催<span class="small">※定休日：火・水</span></dd>
+        <dd>2026年6月20日（土）〜 7月19日（日）<span class="small">※定休日：火・水</span></dd>
 
         <dt>Time</dt>
         <dd>10:00 〜 19:00</dd>
@@ -2112,7 +2165,7 @@ textarea.form-control {
         <div class="form-row">
           <span class="form-row__label">第1希望日時<span class="form-row__required">必須</span></span>
           <div class="form-split">
-            <input type="date" name="date1" class="form-control" min="2026-06-02" required>
+            <input type="date" name="date1" class="form-control" min="2026-06-20" max="2026-07-19" required>
             <select name="time1" class="form-control" required>
               <option value="">時間を選択</option>
               <option value="10:00">10:00</option>
@@ -2130,7 +2183,7 @@ textarea.form-control {
         <div class="form-row">
           <span class="form-row__label">第2希望日時</span>
           <div class="form-split">
-            <input type="date" name="date2" class="form-control" min="2026-06-02">
+            <input type="date" name="date2" class="form-control" min="2026-06-20" max="2026-07-19">
             <select name="time2" class="form-control">
               <option value="">時間を選択</option>
               <option value="10:00">10:00</option>
@@ -2148,7 +2201,7 @@ textarea.form-control {
         <div class="form-row">
           <span class="form-row__label">第3希望日時</span>
           <div class="form-split">
-            <input type="date" name="date3" class="form-control" min="2026-06-02">
+            <input type="date" name="date3" class="form-control" min="2026-06-20" max="2026-07-19">
             <select name="time3" class="form-control">
               <option value="">時間を選択</option>
               <option value="10:00">10:00</option>
