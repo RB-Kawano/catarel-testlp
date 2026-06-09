@@ -260,16 +260,14 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   align-items: center;
   justify-content: center;
   padding: 13px 28px;
-  border: 1px solid rgba(255,255,255,0.85);
+  border: 1px solid var(--color-orange);
   color: #fff;
   font-family: var(--font-gothic);
   font-weight: 400;
   font-size: clamp(12px, 1.4vw, 14px);
   letter-spacing: 0.15em;
   line-height: 1;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  background: rgba(255,255,255,0.04);
+  background: var(--color-orange);
   opacity: 0;
   transform: translateY(20px);
   animation: riseUp 1.3s var(--ease) 0.8s forwards;
@@ -510,20 +508,26 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
 }
 .merit-card__head {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   gap: 14px;
   padding-bottom: 14px;
   border-bottom: 2px solid var(--color-orange);
   margin-bottom: 18px;
 }
 .merit-card__num {
-  font-family: var(--font-en);
-  font-style: italic;
-  font-size: 28px;
-  font-weight: 400;
-  color: var(--color-accent);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 10px;
+  font-family: var(--font-mincho);
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.04em;
   line-height: 1;
-  letter-spacing: 0.02em;
+  color: var(--color-bg);
+  background: var(--color-orange);
   flex-shrink: 0;
 }
 .merit-card__title {
@@ -901,12 +905,13 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   text-transform: uppercase;
 }
 .point-item__no-num {
-  font-family: var(--font-en);
+  font-family: var(--font-mincho);
   font-size: 42px;
-  font-weight: 400;
-  font-style: italic;
+  font-weight: 500;
+  font-style: normal;
   line-height: 1;
   color: var(--color-accent);
+  letter-spacing: 0.02em;
 }
 .point-item__place {
   font-size: 12px;
@@ -1005,6 +1010,8 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   font-style: normal;
 }
 .flow-step__num .n {
+  font-family: var(--font-mincho);
+  font-style: normal;
   font-size: 22px;
   color: var(--color-accent-deep);
   font-weight: 500;
@@ -1844,21 +1851,21 @@ textarea.form-control {
     <div class="merit-grid">
       <div class="merit-card reveal">
         <div class="merit-card__head">
-          <span class="merit-card__num">01.</span>
+          <span class="merit-card__num">01</span>
           <h3 class="merit-card__title">暮らしを具体的にイメージできる</h3>
         </div>
         <p class="merit-card__body">現地でしか体感できない周辺環境や立地、窓から見える景色まで。五感で確かめることで、新生活をより具体的にイメージできます。</p>
       </div>
       <div class="merit-card reveal reveal-delay-1">
         <div class="merit-card__head">
-          <span class="merit-card__num">02.</span>
+          <span class="merit-card__num">02</span>
           <h3 class="merit-card__title">「MUST」と「WANT」が、<br>はっきり分かる</h3>
         </div>
         <p class="merit-card__body">ネット情報だけでは理想に偏りがち。実物を見ることで、自分たちの本当の優先順位が見えてきます。妥協ではなく、選ぶ力が育ちます。</p>
       </div>
       <div class="merit-card reveal reveal-delay-2">
         <div class="merit-card__head">
-          <span class="merit-card__num">03.</span>
+          <span class="merit-card__num">03</span>
           <h3 class="merit-card__title">最新・類似の物件資料が貰える</h3>
         </div>
         <p class="merit-card__body">見学物件だけでなく、ご希望に合わせた最新物件情報もその場でご提案。比較を重ねて経験値を積むことで、自分たちなりの判断軸が育ちます。</p>
@@ -2087,7 +2094,7 @@ textarea.form-control {
   <div class="container">
     <header class="sec-head reveal">
       <div class="sec-head__en">Visit Flow</div>
-      <h2 class="sec-head__jp">参加までの、5ステップ</h2>
+      <h2 class="sec-head__jp">参加までの5ステップ</h2>
     </header>
 
     <div class="flow-list">
