@@ -41,7 +41,7 @@
   --color-accent-deep: #6B5A45;
   --color-accent-soft: #C4B5A2;
   --color-orange: #C2683C;       /* アクセント：濃いオレンジ（テラコッタ） */
-  --color-orange-deep: #A8542A;
+  --color-orange-deep: #8B3D14;
 
   /* Typography */
   --font-mincho: 'Shippori Mincho B1', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
@@ -285,7 +285,7 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
 }
 .hero__info {
   font-family: var(--font-gothic);
-  font-weight: 300;
+  font-weight: 400;
   color: rgba(255,255,255,0.95);
   letter-spacing: 0.1em;
   font-size: clamp(13px, 1.4vw, 15px);
@@ -495,9 +495,18 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   grid-template-columns: repeat(3, 1fr);
   gap: clamp(32px, 4vw, 56px);
   margin-top: clamp(40px, 6vw, 64px);
+  grid-template-rows: auto 1fr;
 }
+/* PC版：3カラム時に各カードの head 行・body 行を揃える（subgrid） */
 .merit-card {
   padding: 0;
+  display: grid;
+  grid-row: span 2;
+  grid-template-rows: subgrid;
+}
+@media (max-width: 768px) {
+  /* モバイル：1カラム時はsubgrid不要（縦並びなので揃える必要なし） */
+  .merit-card { display: block; }
 }
 .merit-card__head {
   display: flex;
@@ -520,11 +529,11 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
 .merit-card__title {
   font-family: var(--font-mincho);
   font-weight: 500;
-  font-size: clamp(18px, 2vw, 21px);
-  letter-spacing: 0.08em;
-  line-height: 1.6;
+  font-size: clamp(17px, 1.7vw, 19px);
+  letter-spacing: 0.06em;
+  line-height: 1.55;
   margin: 0;
-  color: var(--color-ink);
+  color: var(--color-orange-deep);
 }
 .merit-card__body {
   font-size: 14px;
@@ -2283,8 +2292,6 @@ textarea.form-control {
             <span class="cta__arrow"></span>
           </button>
         </div>
-
-        <p class="form-cf7-note">— replace this form with CF7 shortcode —</p>
 
       </form>
       <!-- ▲▲▲ ここまで CF7 に置き換え予定 ▲▲▲ -->
