@@ -22,7 +22,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&display=swap" rel="stylesheet">
 
 <style>
 /* =========================================================
@@ -45,7 +45,7 @@
 
   /* Typography */
   --font-mincho: 'Shippori Mincho B1', 'Hiragino Mincho ProN', 'Yu Mincho', serif;
-  --font-gothic: 'Zen Kaku Gothic New', 'Hiragino Sans', 'Yu Gothic', sans-serif;
+  --font-gothic: 'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif;
   --font-en: 'Cormorant Garamond', 'Shippori Mincho B1', serif;
 
   /* Layout */
@@ -433,15 +433,15 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   overflow: hidden;
 }
 .cta-primary {
-  background: var(--color-bg-deep);
-  color: var(--color-bg);
-  border: 1px solid var(--color-bg-deep);
+  background: var(--color-orange);
+  color: #fff;
+  border: 1px solid var(--color-orange);
 }
 .cta-primary:hover {
-  background: var(--color-accent-deep);
-  border-color: var(--color-accent-deep);
+  background: var(--color-orange-deep);
+  border-color: var(--color-orange-deep);
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(44,40,36,0.2);
+  box-shadow: 0 10px 30px rgba(194,104,60,0.25);
 }
 .cta-line {
   background: #06C755;
@@ -499,23 +499,23 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
 .merit-card {
   padding: 0;
 }
+.merit-card__head {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--color-orange);
+  margin-bottom: 18px;
+}
 .merit-card__num {
   font-family: var(--font-en);
   font-style: italic;
-  font-size: 48px;
+  font-size: 28px;
   font-weight: 400;
   color: var(--color-accent);
   line-height: 1;
-  margin-bottom: 20px;
   letter-spacing: 0.02em;
-}
-.merit-card__num::after {
-  content: "";
-  display: block;
-  width: 32px;
-  height: 1px;
-  background: var(--color-accent);
-  margin-top: 14px;
+  flex-shrink: 0;
 }
 .merit-card__title {
   font-family: var(--font-mincho);
@@ -523,7 +523,7 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   font-size: clamp(18px, 2vw, 21px);
   letter-spacing: 0.08em;
   line-height: 1.6;
-  margin-bottom: 16px;
+  margin: 0;
   color: var(--color-ink);
 }
 .merit-card__body {
@@ -914,8 +914,8 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   line-height: 1.55;
   color: var(--color-ink);
   margin-bottom: 22px;
-  padding-bottom: 22px;
-  border-bottom: 1px solid var(--color-line);
+  padding-bottom: 18px;
+  border-bottom: 2px solid var(--color-orange);
 }
 .point-item__desc {
   font-size: 14.5px;
@@ -1038,10 +1038,7 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
 .sec-property {
   padding-top: clamp(24px, 3vw, 40px);
 }
-/* 物件概要ボックス：縁を濃いオレンジで囲んでメリハリを出す */
-.sec-property .outline-box {
-  border: 2px solid var(--color-orange);
-}
+
 .outline-box {
   max-width: 820px;
   margin: clamp(40px, 6vw, 64px) auto 0;
@@ -1717,17 +1714,12 @@ textarea.form-control {
    ========================================================= */
 .fixed-cta {
   position: fixed;
-  bottom: 16px; left: 12px; right: 12px;
-  padding: 10px;
+  bottom: 12px; left: 12px; right: 12px;
+  padding: 0;
   display: none;
   gap: 8px;
   z-index: 100;
-  border-radius: 8px;
-  background: rgba(44, 40, 36, 0.55);
-  backdrop-filter: blur(14px) saturate(130%);
-  -webkit-backdrop-filter: blur(14px) saturate(130%);
-  border: 1px solid rgba(255,255,255,0.14);
-  box-shadow: 0 8px 30px rgba(0,0,0,0.18);
+  background: transparent;
   transform: translateY(calc(100% + 16px));
   transition: transform 0.45s var(--ease);
 }
@@ -1735,19 +1727,21 @@ textarea.form-control {
 .fixed-cta .cta {
   flex: 1;
   min-width: 0;
-  padding: 13px 14px;
+  padding: 15px 14px;
   font-size: 12px;
   letter-spacing: 0.1em;
-  border-radius: 4px;
+  border-radius: 0;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
 }
-/* 半透明時のボタン微調整（コントラストは維持） */
+/* フォームボタン：濃いオレンジの塗り */
 .fixed-cta .cta-primary {
-  background: rgba(255, 255, 255, 0.95);
-  color: var(--color-ink);
-  border-color: rgba(255, 255, 255, 0.95);
+  background: var(--color-orange);
+  color: #fff;
+  border-color: var(--color-orange);
 }
 .fixed-cta .cta-primary:hover {
-  background: #fff;
+  background: var(--color-orange-deep);
+  border-color: var(--color-orange-deep);
 }
 @media (max-width: 768px) {
   .fixed-cta { display: flex; }
@@ -1840,18 +1834,24 @@ textarea.form-control {
 
     <div class="merit-grid">
       <div class="merit-card reveal">
-        <div class="merit-card__num">01</div>
-        <h3 class="merit-card__title">暮らしを具体的にイメージできる</h3>
+        <div class="merit-card__head">
+          <span class="merit-card__num">01.</span>
+          <h3 class="merit-card__title">暮らしを具体的にイメージできる</h3>
+        </div>
         <p class="merit-card__body">現地でしか体感できない周辺環境や立地、窓から見える景色まで。五感で確かめることで、新生活をより具体的にイメージできます。</p>
       </div>
       <div class="merit-card reveal reveal-delay-1">
-        <div class="merit-card__num">02</div>
-        <h3 class="merit-card__title">「MUST」と「WANT」が、<br>はっきり分かる</h3>
+        <div class="merit-card__head">
+          <span class="merit-card__num">02.</span>
+          <h3 class="merit-card__title">「MUST」と「WANT」が、<br>はっきり分かる</h3>
+        </div>
         <p class="merit-card__body">ネット情報だけでは理想に偏りがち。実物を見ることで、自分たちの本当の優先順位が見えてきます。妥協ではなく、選ぶ力が育ちます。</p>
       </div>
       <div class="merit-card reveal reveal-delay-2">
-        <div class="merit-card__num">03</div>
-        <h3 class="merit-card__title">最新・類似の物件資料が貰える</h3>
+        <div class="merit-card__head">
+          <span class="merit-card__num">03.</span>
+          <h3 class="merit-card__title">最新・類似の物件資料が貰える</h3>
+        </div>
         <p class="merit-card__body">見学物件だけでなく、ご希望に合わせた最新物件情報もその場でご提案。比較を重ねて経験値を積むことで、自分たちなりの判断軸が育ちます。</p>
       </div>
     </div>
@@ -2495,11 +2495,11 @@ textarea.form-control {
   FIXED CTA (mobile)
 ============================================================ -->
 <div class="fixed-cta" id="fixedCta">
-  <a href="#form" class="cta cta-primary">
-    <span>フォームで予約</span>
-  </a>
   <a href="#line" class="cta cta-line">
     <span>LINEで相談</span>
+  </a>
+  <a href="#form" class="cta cta-primary">
+    <span>フォームで予約</span>
   </a>
 </div>
 
