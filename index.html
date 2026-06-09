@@ -260,14 +260,16 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   align-items: center;
   justify-content: center;
   padding: 13px 28px;
-  border: 1px solid var(--color-orange);
+  border: 1px solid rgba(255,255,255,0.85);
   color: #fff;
   font-family: var(--font-gothic);
   font-weight: 400;
   font-size: clamp(12px, 1.4vw, 14px);
   letter-spacing: 0.15em;
   line-height: 1;
-  background: var(--color-orange);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  background: rgba(255,255,255,0.04);
   opacity: 0;
   transform: translateY(20px);
   animation: riseUp 1.3s var(--ease) 0.8s forwards;
@@ -521,9 +523,9 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   min-width: 40px;
   height: 40px;
   padding: 0 10px;
-  font-family: var(--font-mincho);
+  font-family: var(--font-gothic);
   font-weight: 500;
-  font-size: 18px;
+  font-size: 17px;
   letter-spacing: 0.04em;
   line-height: 1;
   color: var(--color-bg);
@@ -531,7 +533,7 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   flex-shrink: 0;
 }
 .merit-card__title {
-  font-family: var(--font-mincho);
+  font-family: var(--font-gothic);
   font-weight: 500;
   font-size: clamp(17px, 1.7vw, 19px);
   letter-spacing: 0.06em;
@@ -2343,11 +2345,11 @@ textarea.form-control {
 
       <article class="libre-feature reveal">
         <figure class="libre-feature__image">
-          <img src="images/feature-03-meeting.jpg" alt="作る側ならではの知見とアドバイス" loading="lazy">
+          <img src="images/feature-03-meeting.jpg" alt="作る側ならではのアドバイス" loading="lazy">
         </figure>
         <div class="libre-feature__body">
           <div class="libre-feature__no">Feature 03</div>
-          <h3 class="libre-feature__title">「作る側」ならではの知見とアドバイス</h3>
+          <h3 class="libre-feature__title">「作る側」ならではのアドバイス</h3>
           <p class="libre-feature__desc">自社グループで「カタレルハウス」を手がけているからこそ、構造・仕様の良し悪しや、建売探しで見るべき視点などを、プロ視点から誠実にお伝えします。</p>
         </div>
       </article>
