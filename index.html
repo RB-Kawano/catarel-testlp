@@ -907,13 +907,21 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   text-transform: uppercase;
 }
 .point-item__no-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+  height: 40px;
+  padding: 0 10px;
   font-family: var(--font-mincho);
-  font-size: 42px;
-  font-weight: 500;
   font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  letter-spacing: 0.04em;
   line-height: 1;
-  color: var(--color-accent);
-  letter-spacing: 0.02em;
+  color: var(--color-bg);
+  background: var(--color-orange);
+  flex-shrink: 0;
 }
 .point-item__place {
   font-size: 12px;
