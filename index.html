@@ -1155,6 +1155,14 @@ button { font-family: inherit; border: none; background: none; cursor: pointer; 
   padding: clamp(32px, 5vw, 56px);
   border: 1px solid var(--color-line);
 }
+/* TimeRex ウィジェットの収まり：枠装飾なしで中央寄せのみ */
+.timerex-wrap {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.timerex-wrap #timerex_calendar {
+  width: 100%;
+}
 /* ▼▼▼ ここから CF7 出力に置き換え予定の領域 ▼▼▼ */
 .form-row {
   display: grid;
@@ -1994,7 +2002,7 @@ textarea.form-control {
             <span class="point-item__no-num">01</span>
             <span>Point One</span>
           </div>
-          <!-- span class="point-item__place">Balcony × Living</span-->
+          <span class="point-item__place">Balcony × Living</span>
           <h3 class="point-item__title">青空と繋がる、<br>リビングとバルコニーの境界</h3>
           <p class="point-item__desc">高い建物が少なく、空と海を近くに感じられる湘南の暮らし。見える風景や空気をそのまま取り入れるように、リビングとテラスバルコニーの繋がりを最もこだわりました。ベンチシートに腰かけて寛げる、家族が自然に集まる「外の庭」のような場所です。</p>
         </div>
@@ -2011,7 +2019,7 @@ textarea.form-control {
             <span class="point-item__no-num">02</span>
             <span>Point Two</span>
           </div>
-          <!--span class="point-item__place">Living Accent</span-->
+          <span class="point-item__place">Living Accent</span>
           <h3 class="point-item__title">木目のアクセントが、<br>ナチュラルを深くする</h3>
           <p class="point-item__desc">リビング全体に施したアクセントクロスは、木目の美しさが特徴。勾配天井やペンダントライトと響き合い、湘南スタイルに新しい解釈を加えた、ナチュラル+モダンな室内空間を生み出しています。ワンフロアで一日が完結する、開放感あふれる設計です。</p>
         </div>
@@ -2028,7 +2036,7 @@ textarea.form-control {
             <span class="point-item__no-num">03</span>
             <span>Point Three</span>
           </div>
-          <!--span class="point-item__place">Kitchen Storage</span-->
+          <span class="point-item__place">Kitchen Storage</span>
           <h3 class="point-item__title">見せない収納で、<br>キッチンをスタイリッシュに</h3>
           <p class="point-item__desc">キッチン背面の壁一面収納は、スライドドアで隠せる仕様。日常はたっぷりの収納量を確保しながら、お客様を招くときは一瞬でスッキリと。生活感とデザイン性の両立を、空間設計で叶えました。</p>
         </div>
@@ -2124,7 +2132,7 @@ textarea.form-control {
         </div>
         <div class="flow-step__body">
           <h3 class="flow-step__title">希望日時の送信</h3>
-          <p class="flow-step__desc">LINEにご登録いただいた場合、自動で案内が表示されます。フォームからの予約をご希望の場合は、下記ボタンからアクセスし、参加希望日時をお選びください。</p>
+          <p class="flow-step__desc">LINEにご登録いただいた場合、自動で案内テキストが表示されます。下記ボタンから予約フォームにアクセスし、参加希望日時をお選びください。</p>
         </div>
       </div>
 
@@ -2133,8 +2141,8 @@ textarea.form-control {
           <div class="flow-step__num"><span class="step">STEP</span><span class="n">03</span></div>
         </div>
         <div class="flow-step__body">
-          <h3 class="flow-step__title">ご予約完了</h3>
-          <p class="flow-step__desc">必要事項を入力し、送信いただくとご予約完了となります。担当者より見学日時確定のご連絡をいたします。</p>
+          <h3 class="flow-step__title">ご予約の確定</h3>
+          <p class="flow-step__desc">必要事項を入力し、送信いただくとご予約確定となります。担当者より確認のご連絡をいたします。</p>
         </div>
       </div>
 
@@ -2180,7 +2188,7 @@ textarea.form-control {
 
         <dt>Date</dt>
         <!-- [[PROPERTY]] 開催日 -->
-        <dd>2026年6月20日(土)〜 7月19日(日)<span class="small">※定休日：火・水</span></dd>
+        <dd>2026年6月20日（土）〜 7月19日（日）<span class="small">※定休日：火・水</span></dd>
 
         <dt>Time</dt>
         <dd>10:00 〜 19:00</dd>
@@ -2208,110 +2216,16 @@ textarea.form-control {
       <h2 class="sec-head__jp">見学会のご予約</h2>
     </header>
 
-    <p class="form-intro reveal reveal-delay-1">下記フォームよりお気軽にお申し込みください。<br>担当者より24時間以内にご連絡いたします。<br>※火・水は定休日です。</p>
+    <p class="form-intro reveal reveal-delay-1">下記カレンダーよりお気軽にご予約ください。<br>空き状況をその場でご確認いただけます。<br>※火・水は定休日です。</p>
 
-    <div class="form-wrap reveal reveal-delay-2">
-      <!-- ▼▼▼ WordPress実装時にCF7ショートコードに置き換え ▼▼▼ -->
-      <form onsubmit="event.preventDefault(); alert('WordPress実装時にCF7に置き換え予定です');">
-
-        <div class="form-row">
-          <label class="form-row__label" for="f-name">お名前<span class="form-row__required">必須</span></label>
-          <div>
-            <input type="text" id="f-name" name="name" class="form-control" placeholder="山田 太郎" required>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <label class="form-row__label" for="f-email">メール<span class="form-row__required">必須</span></label>
-          <div>
-            <input type="email" id="f-email" name="email" class="form-control" placeholder="sample@example.com" required>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <span class="form-row__label">第1希望日時<span class="form-row__required">必須</span></span>
-          <div class="form-split">
-            <input type="date" name="date1" class="form-control" min="2026-06-20" max="2026-07-19" required>
-            <select name="time1" class="form-control" required>
-              <option value="">時間を選択</option>
-              <option value="10:00">10:00</option>
-              <option value="11:00">11:00</option>
-              <option value="13:00">13:00</option>
-              <option value="14:00">14:00</option>
-              <option value="15:00">15:00</option>
-              <option value="16:00">16:00</option>
-              <option value="17:00">17:00</option>
-              <option value="18:00">18:00</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <span class="form-row__label">第2希望日時</span>
-          <div class="form-split">
-            <input type="date" name="date2" class="form-control" min="2026-06-20" max="2026-07-19">
-            <select name="time2" class="form-control">
-              <option value="">時間を選択</option>
-              <option value="10:00">10:00</option>
-              <option value="11:00">11:00</option>
-              <option value="13:00">13:00</option>
-              <option value="14:00">14:00</option>
-              <option value="15:00">15:00</option>
-              <option value="16:00">16:00</option>
-              <option value="17:00">17:00</option>
-              <option value="18:00">18:00</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <span class="form-row__label">第3希望日時</span>
-          <div class="form-split">
-            <input type="date" name="date3" class="form-control" min="2026-06-20" max="2026-07-19">
-            <select name="time3" class="form-control">
-              <option value="">時間を選択</option>
-              <option value="10:00">10:00</option>
-              <option value="11:00">11:00</option>
-              <option value="13:00">13:00</option>
-              <option value="14:00">14:00</option>
-              <option value="15:00">15:00</option>
-              <option value="16:00">16:00</option>
-              <option value="17:00">17:00</option>
-              <option value="18:00">18:00</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <span class="form-row__label">参加人数<span class="form-row__required">必須</span></span>
-          <div class="form-radio-group">
-            <label class="form-radio"><input type="radio" name="people" value="1" required>1名</label>
-            <label class="form-radio"><input type="radio" name="people" value="2">2名</label>
-            <label class="form-radio"><input type="radio" name="people" value="3">3名</label>
-            <label class="form-radio"><input type="radio" name="people" value="4+">4名以上</label>
-          </div>
-        </div>
-
-        <div class="form-row">
-          <label class="form-row__label" for="f-msg">ご質問・ご要望</label>
-          <div>
-            <textarea id="f-msg" name="message" class="form-control" placeholder="お気軽にご相談ください"></textarea>
-          </div>
-        </div>
-
-        <p class="form-agreement">
-          <a href="#">プライバシーポリシー</a>に同意のうえ、送信してください。
-        </p>
-
-        <div class="form-submit">
-          <button type="submit" class="cta cta-primary">
-            <span>この内容で予約する</span>
-            <span class="cta__arrow"></span>
-          </button>
-        </div>
-
-      </form>
-      <!-- ▲▲▲ ここまで CF7 に置き換え予定 ▲▲▲ -->
+    <div class="timerex-wrap reveal reveal-delay-2">
+      <!-- Begin TimeRex Widget -->
+      <div id="timerex_calendar" data-url="https://timerex.net/s/line.libreworks.rb_f750/99b5211b"></div>
+      <script id="timerex_embed" src="https://asset.timerex.net/js/embed.js"></script>
+      <script type="text/javascript">
+        TimerexCalendar();
+      </script>
+      <!-- End TimeRex Widget -->
     </div>
   </div>
 </section>
@@ -2520,7 +2434,7 @@ textarea.form-control {
 ============================================================ -->
 <div class="fixed-cta" id="fixedCta">
   <a href="#line" class="cta cta-line">
-    <span>LINEで詳細を確認</span>
+    <span>LINEで相談</span>
   </a>
   <a href="#form" class="cta cta-primary">
     <span>フォームで予約</span>
